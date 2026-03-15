@@ -87,13 +87,49 @@
             gap: 0.5rem;
         }
         .btn-stream:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(239,68,68,0.4); }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background: #111;
+            border-radius: 0.5rem;
+            border: 1px solid #333;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .tiktok-embed {
+            position: relative;
+            padding-bottom: 120%; /* TikTok shorts are taller */
+            height: 0;
+            overflow: hidden;
+        }
+        .tiktok-embed blockquote {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 <body class="relative">
     <div class="bg-pattern"></div>
     <div class="grain"></div>
 
-    <!-- Nav -->
+    <!-- Nav (unchanged) -->
     <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-red-900/50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-display tracking-widest text-white hover:text-red-400">Richie_Rich<span class="text-red-500">007</span></a>
@@ -106,7 +142,7 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero (unchanged) -->
     <section class="relative min-h-screen flex items-center justify-center px-6 pt-24">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
@@ -126,7 +162,7 @@
         </div>
     </section>
 
-    <!-- Music -->
+    <!-- Music (unchanged – accurate tracklist/bio) -->
     <section id="music" class="py-20 px-6 bg-black/70">
         <div class="max-w-6xl mx-auto">
             <h2 class="font-display text-5xl md:text-6xl text-center mb-12 text-red-500">2 Decades of Sorrow</h2>
@@ -171,7 +207,7 @@
         </div>
     </section>
 
-    <!-- About – Your full bio restored exactly as provided -->
+    <!-- About (full exact bio) -->
     <section id="about" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="font-display text-5xl mb-12 text-red-500">About Richie_Rich007</h2>
@@ -195,23 +231,49 @@
         </div>
     </section>
 
-    <!-- Videos -->
+    <!-- Videos – All your YouTube + new TikTok promo clip -->
     <section id="videos" class="py-20 px-6 bg-black/70">
         <div class="max-w-6xl mx-auto text-center">
-            <h2 class="font-display text-5xl mb-12 text-red-500">Videos</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="aspect-video bg-gray-900 rounded-lg flex items-center justify-center border border-red-900">
-                    <p class="text-xl text-gray-400">Music Video – Coming Soon</p>
+            <h2 class="font-display text-5xl mb-12 text-red-500">Music Videos & Clips</h2>
+            <p class="text-xl mb-10 text-gray-300">Official videos and behind-the-scenes/promos from 2 Decades of Sorrow</p>
+            <div class="video-grid">
+                <!-- YouTube Videos -->
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/Kn87HlZGzTc" title="Forever I’ll love you - Richie_Rich007" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="aspect-video bg-gray-900 rounded-lg flex items-center justify-center border border-red-900">
-                    <p class="text-xl text-gray-400">Behind the Scenes – Follow on TikTok/YouTube</p>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/b0H-tW7WVNo" title="I wake up everyday - Richie_Rich007" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/hT-0v-X12Z8" title="Our old air - Richie_Rich007" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/g3wbTdPXOtk" title="I just hope in the quiet of the night - Richie_Rich007" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/UNrDX32GbTo" title="A girl I never knew - Richie_Rich007" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/IsX4kLJVyZ0" title="My sorrow - Richie_Rich007" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <!-- New TikTok Promo Clip -->
+                <div class="tiktok-embed">
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@richie_rich007_/video/ZP8qKEyTy" data-video-id="ZP8qKEyTy">
+                        <section>
+                            <a href="https://www.tiktok.com/@richie_rich007_?refer=embed" target="_blank">@richie_rich007_</a>
+                            Just thought I’d say hi 👋 and let you guys know my album’s out right now 2 Decades of sorrow, Richie_Rich007, out now on Spotify and Apple Music and Pandora. <a href="https://www.tiktok.com/tag/distrokid?refer=embed" target="_blank">#Distrokid</a> <a href="https://www.tiktok.com/tag/richie_rich007?refer=embed" target="_blank">#Richie_Rich007</a> <a href="https://www.tiktok.com/tag/yuccavalley?refer=embed" target="_blank">#yuccavalley</a> <a href="https://www.tiktok.com/tag/punkrock?refer=embed" target="_blank">#punkrock</a>
+                        </section>
+                    </blockquote>
+                    <script async src="https://www.tiktok.com/embed/v2/ZP8qKEyTy"></script>
                 </div>
             </div>
-            <a href="https://youtube.com/@richie_rich007x" target="_blank" class="mt-10 inline-block btn-stream bg-red-600 hover:bg-red-500 text-white text-xl">Subscribe on YouTube</a>
+            <a href="https://youtube.com/@richie_rich007x" target="_blank" class="mt-12 inline-block btn-stream bg-red-600 hover:bg-red-500 text-white text-xl">Subscribe on YouTube for More</a>
+            <a href="https://www.tiktok.com/@richie_rich007_" target="_blank" class="mt-6 inline-block btn-stream bg-black hover:bg-gray-800 text-white text-xl">Follow on TikTok</a>
         </div>
     </section>
 
-    <!-- Connect -->
+    <!-- Connect (unchanged) -->
     <section id="connect" class="py-20 px-6 bg-gradient-to-t from-red-950/30 to-black">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="font-display text-5xl mb-12 text-red-500">Connect</h2>
