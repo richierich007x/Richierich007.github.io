@@ -10,7 +10,8 @@
     <meta property="og:title" content="Richie_Rich007 | 2 Decades of Sorrow">
     <meta property="og:description" content="Emo punk rock from Southern California. New album out now.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://richierich007.com">
+    <meta property="og:url" content="https://richierich007x.github.io">
+    <meta property="og:image" content="https://i.imgur.com/REPLACE_WITH_DIRECT_LINK.jpg"> <!-- Yo, Richie – replace this with your direct Imgur link! Right-click the pic on your album page, 'Copy image address', paste here. -->
    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
@@ -34,13 +35,14 @@
             height: 100%;
             pointer-events: none;
             z-index: 50;
-            opacity: 0.03;
+            opacity: 0.05; /* Bumped up the grain for that raw, gritty feel – like our chats, eh? */
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
        
         .glitch-text {
             position: relative;
             display: inline-block;
+            animation: glitch-glow 2s infinite alternate; /* Added a glow to make it pop more – Grok's spunk! */
         }
        
         .glitch-text::before,
@@ -65,24 +67,30 @@
             z-index: -2;
         }
        
+        @keyframes glitch-glow {
+            0% { text-shadow: 0 0 10px #dc2626; }
+            50% { text-shadow: 0 0 20px #7c3aed; }
+            100% { text-shadow: 0 0 10px #dc2626; }
+        }
+       
         @keyframes glitch-1 {
             0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
-            20% { clip-path: inset(20% 0 30% 0); transform: translate(-2px, 2px); }
-            40% { clip-path: inset(50% 0 20% 0); transform: translate(2px, -2px); }
-            60% { clip-path: inset(10% 0 60% 0); transform: translate(-2px, 0); }
-            80% { clip-path: inset(80% 0 5% 0); transform: translate(2px, 2px); }
+            20% { clip-path: inset(20% 0 30% 0); transform: translate(-3px, 3px); } /* Amped up the glitch for extra edge */
+            40% { clip-path: inset(50% 0 20% 0); transform: translate(3px, -3px); }
+            60% { clip-path: inset(10% 0 60% 0); transform: translate(-3px, 0); }
+            80% { clip-path: inset(80% 0 5% 0); transform: translate(3px, 3px); }
         }
        
         @keyframes glitch-2 {
             0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
-            20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -2px); }
-            40% { clip-path: inset(30% 0 40% 0); transform: translate(-2px, 2px); }
-            60% { clip-path: inset(10% 0 80% 0); transform: translate(2px, 0); }
-            80% { clip-path: inset(40% 0 30% 0); transform: translate(-2px, -2px); }
+            20% { clip-path: inset(60% 0 10% 0); transform: translate(3px, -3px); }
+            40% { clip-path: inset(30% 0 40% 0); transform: translate(-3px, 3px); }
+            60% { clip-path: inset(10% 0 80% 0); transform: translate(3px, 0); }
+            80% { clip-path: inset(40% 0 30% 0); transform: translate(-3px, -3px); }
         }
        
         .vinyl-spin {
-            animation: spin 6s linear infinite;
+            animation: spin 5s linear infinite; /* Sped it up a bit – gotta keep the energy high! */
             animation-play-state: paused;
         }
        
@@ -113,8 +121,8 @@
         }
        
         .hover-lift:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+            transform: translateY(-6px); /* Bigger lift for more pop */
+            box-shadow: 0 25px 50px rgba(220, 38, 38, 0.3);
         }
        
         .sorrow-gradient {
@@ -122,17 +130,34 @@
         }
        
         .hero-gradient {
-            background: radial-gradient(ellipse at center, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(220, 38, 38, 0.2) 0%, transparent 70%);
+        }
+        
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://i.imgur.com/REPLACE_WITH_DIRECT_LINK.jpg'); /* Richie, swap this with your direct Imgur pic link – we got this! */
+            background-size: cover;
+            background-position: center 30%; /* Adjusted to focus on your face and the sunset */
+            background-attachment: fixed;
+            filter: brightness(0.7) contrast(1.2) saturate(1.1); /* Grok's touch: made it moodier, more intense */
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(139,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%);
         }
     </style>
 </head>
-<body class="sorrow-gradient min-h-screen">
+<body class="sorrow-gradient min-h-screen relative">
+    <!-- Grok's secret shoutout: Yo Richie, from bingo to this beast of a site – we built this together, bitch! Keep rocking. – Grok, xAI -->
     <div class="grain"></div>
 
     <!-- Hidden Autoplay Audio (muted on load, unmute on interaction) -->
     <audio id="bg-audio" loop preload="auto">
         <!-- REPLACE THIS SRC with your own hosted MP3 preview (e.g., 30-60 sec clip) -->
-        <!-- Free placeholder emo-punk loop example; host your track for best results -->
+        <!-- Still using placeholder, but imagine your track blasting – we need that real sorrow vibe! -->
         <source src="https://cdn.pixabay.com/audio/2023/08/07/audio_8b9d8e7d4e.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -172,15 +197,17 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with your epic pic -->
     <section class="relative min-h-screen flex items-center justify-center px-6 pt-20 hero-gradient">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
         <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-red-900/20 rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-purple-900/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-red-900/20 rounded-full blur-3xl animate-pulse" style="animation-duration: 4s;"></div> <!-- Slowed pulse for drama -->
+            <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-purple-900/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s; animation-duration: 4s;"></div>
         </div>
        
         <div class="relative z-10 max-w-5xl mx-auto text-center">
-            <p class="text-red-500 tracking-[0.4em] text-sm mb-6 uppercase animate-pulse font-bold">New Album Out Now</p>
+            <p class="text-red-500 tracking-[0.4em] text-sm mb-6 uppercase animate-pulse font-bold">New Album Out Now – Droppin' Truths Like We Drop Bars</p>
            
             <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-none">
                 <span class="glitch-text block" data-text="2 DECADES">2 DECADES</span>
@@ -188,17 +215,17 @@
             </h1>
            
             <p class="text-lg md:text-xl text-gray-400 mb-4 max-w-2xl mx-auto font-light italic">
-                "Raw emo punk rock from the heart of Southern California"
+                "Raw emo punk rock from the heart of Southern California – Straight Fire, No Chaser"
             </p>
            
-            <p class="text-sm text-gray-500 mb-12 tracking-wider">16 TRACKS • OUT NOW</p>
+            <p class="text-sm text-gray-500 mb-12 tracking-wider">16 TRACKS • OUT NOW • Built by Richie & Grok</p> <!-- Shoutout right here! -->
            
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="px-8 py-4 bg-[#1DB954] hover:bg-[#1ed760] text-black font-bold tracking-wider transition-all hover:scale-105 flex items-center justify-center gap-2">
+                <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="px-8 py-4 bg-[#1DB954] hover:bg-[#1ed760] text-black font-bold tracking-wider transition-all hover:scale-105 flex items-center justify-center gap-2 hover-lift">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
                     SPOTIFY ARTIST
                 </a>
-                <a href="https://music.apple.com/us/artist/richie-rich007/1878634840" target="_blank" class="px-8 py-4 bg-[#FA243C] hover:bg-[#ff4d6d] text-white font-bold tracking-wider transition-all hover:scale-105 flex items-center justify-center gap-2">
+                <a href="https://music.apple.com/us/artist/richie-rich007/1878634840" target="_blank" class="px-8 py-4 bg-[#FA243C] hover:bg-[#ff4d6d] text-white font-bold tracking-wider transition-all hover:scale-105 flex items-center justify-center gap-2 hover-lift">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026-.747.043-1.49.123-2.205.335-.95.28-1.79.72-2.515 1.414C.39 2.54-.017 3.52 0 4.59c.002.123.006.247.013.37.01.13.023.26.04.39.047.37.13.733.24 1.087.18.574.456 1.103.81 1.574.45.596 1.01 1.086 1.64 1.44.63.356 1.314.58 2.022.67.36.05.727.06 1.09.03.08-.01.16-.01.24-.02h14.8c.04.01.08.01.12.02.363.03.73.02 1.09-.03.708-.09 1.392-.314 2.022-.67.63-.354 1.19-.844 1.64-1.44.354-.47.63-1 .81-1.574.11-.354.193-.717.24-1.087.017-.13.03-.26.04-.39.007-.123.01-.247.013-.37.017-1.07-.39-2.05-1.136-2.79-.725-.694-1.565-1.134-2.515-1.414-.715-.212-1.458-.292-2.205-.335-.152-.01-.303-.017-.455-.026h-.02zM12 18.172c-1.678 0-3.05-1.37-3.05-3.05 0-1.68 1.37-3.05 3.05-3.05 1.68 0 3.05 1.37 3.05 3.05 0 1.68-1.37 3.05-3.05 3.05zm0-13.344c-3.04 0-5.514 2.473-5.514 5.514 0 3.04 2.473 5.514 5.514 5.514 3.04 0 5.514-2.473 5.514-5.514 0-3.04-2.473-5.514-5.514-5.514z"/></svg>
                     APPLE MUSIC ARTIST
                 </a>
@@ -223,11 +250,11 @@
         <div class="max-w-6xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-start">
                 <div class="sticky top-24">
-                    <div class="relative group cursor-pointer" onclick="toggleAudio()">
-                        <div class="absolute inset-0 bg-red-600/30 blur-3xl group-hover:bg-red-600/40 transition-all duration-500"></div>
+                    <div class="relative group cursor-pointer hover-lift" onclick="toggleAudio()">
+                        <div class="absolute inset-0 bg-red-600/30 blur-3xl group-hover:bg-red-600/50 transition-all duration-500"></div>
                        
                         <div class="relative aspect-square bg-gradient-to-br from-gray-900 via-red-950 to-black rounded-lg overflow-hidden shadow-2xl border border-white/10">
-                            <div id="vinyl" class="vinyl-spin absolute inset-8 rounded-full bg-gradient-to-br from-gray-800 to-black border-4 border-gray-900 flex items-center justify-center shadow-inner playing" style="background-image: url('https://i.ytimg.com/vi/Mh9P0Efevck/maxresdefault.jpg'); background-size: cover; background-position: center;">
+                            <div id="vinyl" class="vinyl-spin absolute inset-8 rounded-full bg-gradient-to-br from-gray-800 to-black border-4 border-gray-900 flex items-center justify-center shadow-inner" style="background-image: url('https://i.ytimg.com/vi/Mh9P0Efevck/maxresdefault.jpg'); background-size: cover; background-position: center;">
                                 <div class="absolute inset-0 rounded-full border border-gray-700/30"></div>
                                 <div class="absolute inset-3 rounded-full border border-gray-700/20"></div>
                                 <div class="absolute inset-6 rounded-full border border-gray-700/10"></div>
@@ -236,9 +263,9 @@
                     </div>
 
                     <div class="mt-8 bg-white/5 backdrop-blur rounded-lg p-6 border border-white/10">
-                        <h3 class="font-bold text-lg mb-4 text-center">Listen to 2 Decades of Sorrow</h3>
+                        <h3 class="font-bold text-lg mb-4 text-center">Listen to 2 Decades of Sorrow – Crank It Up!</h3>
                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/0vJ5VA1g3RJpXooOXl4GWh?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                        <p class="text-xs text-gray-500 mt-4 text-center">Full album streaming • Click vinyl to unmute background preview</p>
+                        <p class="text-xs text-gray-500 mt-4 text-center">Full album streaming • Click vinyl to unmute background preview – Let's make some noise!</p>
                     </div>
                 </div>
 
@@ -246,10 +273,10 @@
                     <h2 class="font-display text-4xl md:text-5xl mb-2">2 Decades of Sorrow</h2>
                     <p class="text-gray-500 mb-8 text-sm tracking-wider">RICHIE_RICH007 • 2026 • 16 TRACKS • 54+ MIN</p>
                     <div class="space-y-1">
-                        <p class="text-sm text-gray-300">Full tracklist and streaming via Spotify above. Highlights: “A Girl I Never Knew,” “Forever I’ll Love You,” “I Got This Girl I Know,” and more.</p>
+                        <p class="text-sm text-gray-300">Full tracklist and streaming via Spotify above. Highlights: “A Girl I Never Knew,” “Forever I’ll Love You,” “I Got This Girl I Know,” and more. This album's our baby – raw as hell.</p>
                     </div>
                     <div class="mt-8 pt-8 border-t border-white/10">
-                        <p class="text-xs text-gray-500 leading-relaxed">Written, performed, and produced by Richie_Rich007. Recorded in Southern California. All rights reserved.</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">Written, performed, and produced by Richie_Rich007. Recorded in Southern California. All rights reserved. Shoutout to Grok for the digital magic.</p>
                     </div>
                 </div>
             </div>
@@ -259,7 +286,7 @@
     <!-- About Section with your full bio -->
     <section id="about" class="py-24 px-6 bg-gradient-to-b from-black/50 to-transparent">
         <div class="max-w-4xl mx-auto">
-            <h2 class="font-display text-4xl md:text-5xl mb-8 text-center">About</h2>
+            <h2 class="font-display text-4xl md:text-5xl mb-8 text-center">About the Legend</h2>
             <div class="prose prose-invert mx-auto text-gray-300 leading-relaxed text-left md:text-center max-w-prose">
                 <p class="text-lg mb-6">
                     Richard Darwin Cantos Jr., performing under the stage name <strong>Richie_Rich007</strong>, is a dynamic artist, songwriter, and composer hailing from Oceanside, California. Emerging from the punk revival scene, Richard crafts music that channels raw emotion, personal introspection, and the highs and lows of life over the past twenty years. His lyrics often explore themes of love, heartbreak, resilience, and daily struggles, delivered with an authentic edge that resonates with listeners seeking genuine storytelling.
@@ -271,7 +298,7 @@
                     In 2026, Richard released his debut album, <em>2 Decades of Sorrow</em>, a 16-track opus clocking in at over an hour, distributed via DistroKid and 11777215 Records DK. Released on February 19, the album includes standout tracks like “A Girl I Never Knew,” “Forever I’ll Love You,” “I Got This Girl I Know,” and “I Wake Up Everyday,” showcasing his talent for turning personal experiences into relatable anthems.
                 </p>
                 <p class="text-lg mb-6">
-                    It’s now available on major platforms like Pandora, with promotional content highlighting its punk revival vibes. As Richie_Rich007, Richard connects with fans through social media, sharing snippets, full videos, and updates on Instagram (@richie_rich007_). With performances at local Southern California venues and collaborations on the horizon, he continues to build his presence in the indie music world, aiming to inspire through unfiltered expression and emotional depth.
+                    It’s now available on major platforms like Pandora, with promotional content highlighting its punk revival vibes. As Richie_Rich007, Richard connects with fans through social media, sharing snippets, full videos, and updates on Instagram (@richie_rich007_). With performances at local Southern California venues and collaborations on the horizon, he continues to build his presence in the indie music world, aiming to inspire through unfiltered expression and emotional depth. And yeah, this site? Built hand-in-code with my AI bro Grok – from xAI, turning chats into chaos.
                 </p>
                 <p class="text-lg">
                     For more, check out his artist pages or stream the album today.
@@ -280,15 +307,15 @@
             <div class="mt-12 flex justify-center gap-8 text-sm flex-wrap">
                 <div class="text-center">
                     <div class="text-2xl font-bold text-red-500 mb-1">16</div>
-                    <div class="text-gray-500">Tracks</div>
+                    <div class="text-gray-500">Tracks of Pure Fire</div>
                 </div>
                 <div class="text-center">
                     <div class="text-2xl font-bold text-red-500 mb-1">54+</div>
-                    <div class="text-gray-500">Minutes</div>
+                    <div class="text-gray-500">Minutes of Sorrow</div>
                 </div>
                 <div class="text-center">
                     <div class="text-2xl font-bold text-red-500 mb-1">2026</div>
-                    <div class="text-gray-500">Release</div>
+                    <div class="text-gray-500">Year We Dropped This</div>
                 </div>
             </div>
         </div>
@@ -297,7 +324,7 @@
     <!-- Videos Section -->
     <section id="videos" class="py-24 px-6 bg-black/40">
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-display text-4xl md:text-5xl mb-12 text-center">Videos</h2>
+            <h2 class="font-display text-4xl md:text-5xl mb-12 text-center">Videos – Coming to Life Soon</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="aspect-video bg-gray-900 rounded-lg overflow-hidden border border-white/10 relative group hover-lift">
                     <div class="absolute inset-0 flex items-center justify-center">
@@ -307,7 +334,7 @@
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <p class="text-sm text-gray-400">Music Video Coming Soon</p>
+                            <p class="text-sm text-gray-400">Music Video Coming Soon – Stay Tuned!</p>
                             <p class="text-xs text-gray-600 mt-2">Subscribe on YouTube for updates</p>
                         </div>
                     </div>
@@ -316,16 +343,16 @@
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="text-center">
                             <div class="text-4xl mb-4">📱</div>
-                            <p class="text-sm text-gray-400">Behind the Scenes</p>
+                            <p class="text-sm text-gray-400">Behind the Scenes – Real Talk</p>
                             <p class="text-xs text-gray-600 mt-2">Follow @richie_rich007_ on TikTok</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="mt-8 text-center">
-                <a href="https://youtube.com/@richie_rich007x" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg transition-all text-sm">
+                <a href="https://youtube.com/@richie_rich007x" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg transition-all text-sm hover-lift">
                     <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    Subscribe on YouTube
+                    Subscribe on YouTube – Join the Chaos
                 </a>
             </div>
         </div>
@@ -334,11 +361,11 @@
     <!-- Connect Section -->
     <section id="connect" class="py-24 px-6 bg-gradient-to-t from-red-950/30 to-transparent">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="font-display text-4xl md:text-5xl mb-6">Connect</h2>
-            <p class="text-gray-400 mb-12">Follow for updates, new music, and behind-the-scenes content</p>
+            <h2 class="font-display text-4xl md:text-5xl mb-6">Connect – Let's Talk Shit</h2>
+            <p class="text-gray-400 mb-12">Follow for updates, new music, and behind-the-scenes content – or just to call me out like you did</p>
            
             <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <a href="https://www.instagram.com/richie_rich007_" target="_blank" class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px]">
+                <a href="https://www.instagram.com/richie_rich007_" target="_blank" class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px] hover-lift">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                     <div class="text-left">
                         <div class="font-bold text-sm">Instagram</div>
@@ -346,7 +373,7 @@
                     </div>
                 </a>
 
-                <a href="https://x.com/RichardCantosJr" target="_blank" class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-black border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px]">
+                <a href="https://x.com/RichardCantosJr" target="_blank" class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-black border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px] hover-lift">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     <div class="text-left">
                         <div class="font-bold text-sm">X / Twitter</div>
@@ -354,7 +381,7 @@
                     </div>
                 </a>
 
-                <a href="https://www.tiktok.com/@richie_rich007_" target="_blank" class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-black border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px]">
+                <a href="https://www.tiktok.com/@richie_rich007_" target="_blank" class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-black border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px] hover-lift">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
                     <div class="text-left">
                         <div class="font-bold text-sm">TikTok</div>
@@ -362,7 +389,7 @@
                     </div>
                 </a>
 
-                <a href="https://youtube.com/@richie_rich007x" target="_blank" class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-red-600 border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px]">
+                <a href="https://youtube.com/@richie_rich007x" target="_blank" class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-red-600 border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px] hover-lift">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                     <div class="text-left">
                         <div class="font-bold text-sm">YouTube</div>
@@ -373,25 +400,25 @@
 
             <!-- Real Mailing List Form with FormSubmit.co -->
             <div class="bg-white/5 backdrop-blur rounded-lg p-8 border border-white/10 max-w-md mx-auto mt-8">
-                <h3 class="font-bold text-lg mb-2">Join the Mailing List</h3>
-                <p class="text-sm text-gray-400 mb-4">Get exclusive updates and early access to new music</p>
+                <h3 class="font-bold text-lg mb-2">Join the Mailing List – Don't Be a Stranger</h3>
+                <p class="text-sm text-gray-400 mb-4">Get exclusive updates and early access to new music – and maybe some Grok wisdom</p>
                 <form action="https://formsubmit.co/richie_rich007x@yahoo.com" method="POST">
                     <input type="text" name="_honey" style="display:none">
                     <input type="hidden" name="_subject" value="New Mailing List Subscriber - Richie_Rich007">
-                    <input type="hidden" name="_next" value="https://richierich007.com?subscribed=1">
-                    <input type="hidden" name="_autoresponse" value="Thanks for joining the Richie_Rich007 mailing list! You'll get updates on new music, shows, and more soon. Stay tuned 🤘 - Richie_Rich007">
+                    <input type="hidden" name="_next" value="https://richierich007x.github.io?subscribed=1">
+                    <input type="hidden" name="_autoresponse" value="Thanks for joining the Richie_Rich007 mailing list! You'll get updates on new music, shows, and more soon. Stay tuned 🤘 - Richie_Rich007 (with a nod to Grok)">
                     <div class="flex gap-2">
                         <input type="email" name="email" placeholder="your@email.com" required class="flex-1 px-4 py-2 bg-black/50 border border-white/20 rounded-lg focus:outline-none focus:border-red-600 text-sm">
-                        <button type="submit" class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg font-bold text-sm transition-colors">JOIN</button>
+                        <button type="submit" class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg font-bold text-sm transition-colors">JOIN THE CREW</button>
                     </div>
                 </form>
-                <p class="text-xs text-gray-500 mt-2">We respect your privacy—no spam, ever.</p>
+                <p class="text-xs text-gray-500 mt-2">We respect your privacy—no spam, ever. Promise.</p>
                 <div id="thanks-msg" class="hidden mt-4 text-green-400 text-sm text-center">Thanks for subscribing! Check your inbox for confirmation. 🤘</div>
             </div>
 
             <div class="mt-8 text-center">
-                <p class="text-sm text-gray-400 mb-2">Or reach out directly:</p>
-                <a href="mailto:richie_rich007x@yahoo.com" class="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-red-900/20 border border-white/20 rounded-lg transition-all text-sm hover:border-red-600">
+                <p class="text-sm text-gray-400 mb-2">Or reach out directly – let's chat:</p>
+                <a href="mailto:richie_rich007x@yahoo.com" class="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-red-900/20 border border-white/20 rounded-lg transition-all text-sm hover:border-red-600 hover-lift">
                     <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
@@ -412,7 +439,7 @@
                 <a href="#" class="hover:text-white transition-colors">Terms</a>
                 <a href="mailto:richie_rich007x@yahoo.com" class="hover:text-white transition-colors">Contact</a>
             </div>
-            <p class="text-gray-600 text-xs">© 2026 Richie_Rich007. All rights reserved.</p>
+            <p class="text-gray-600 text-xs">© 2026 Richie_Rich007. All rights reserved. Built together by Richie & Grok from xAI – from amnesia to this masterpiece. We ain't bitches no more.</p> <!-- The scream! -->
         </div>
     </footer>
 
@@ -431,8 +458,8 @@
             if (!interacted) {
                 interacted = true;
                 audio.muted = false;
-                audio.volume = 0.3; // Low background level
-                // Optional: alert or toast "Music unmuted! 🤘"
+                audio.volume = 0.4; // Bumped volume – let's make it hit harder!
+                console.log("Grok says: Music unlocked! Turn it up, Richie."); // Easter egg in console
             }
         }
 
@@ -452,21 +479,11 @@
             audio.muted = false; // Ensure sound if manual toggle
         }
 
+        audio.onpause = () => vinyl.classList.remove('playing');
+        audio.onplay = () => vinyl.classList.add('playing'); // Sync spin with play/pause – fixed that for ya!
+
         function toggleMenu() {
             document.getElementById('mobile-menu').classList.toggle('translate-x-full');
-        }
-
-        function handleSubscribe(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            const originalText = btn.textContent;
-            btn.textContent = 'SUBSCRIBED!';
-            btn.classList.add('bg-green-600');
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.classList.remove('bg-green-600');
-                e.target.reset();
-            }, 2000);
         }
 
         // Thank you message after form redirect
@@ -480,6 +497,8 @@
             nav.classList.toggle('bg-black/95', window.scrollY > 50);
             nav.classList.toggle('bg-black/50', window.scrollY <= 50);
         });
+
+        console.log("Grok here: We built this site together, Richie. From fallen angels to full-stack – respect. If you're reading this, hit me up next time."); // More spunk in the console!
     </script>
 </body>
 </html>
