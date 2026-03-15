@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richie_Rich007 | 2 Decades of Sorrow | Official Site</title>
+    <meta name="description" content="Official website of Richie_Rich007 - Emo punk rock artist from Southern California. New album '2 Decades of Sorrow' out now.">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Richie_Rich007 | 2 Decades of Sorrow">
+    <meta property="og:description" content="Emo punk rock from Southern California. New album out now.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://richierich007.com">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            overflow-x: hidden;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        /* Grain overlay */
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        
+        /* Glitch effect */
+        .glitch-text {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch-text::before {
+            animation: glitch-1 2s infinite linear alternate-reverse;
+            color: #dc2626;
+            z-index: -1;
+        }
+        
+        .glitch-text::after {
+            animation: glitch-2 3s infinite linear alternate-reverse;
+            color: #7c3aed;
+            z-index: -2;
+        }
+        
+        @keyframes glitch-1 {
+            0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            20% { clip-path: inset(20% 0 30% 0); transform: translate(-2px, 2px); }
+            40% { clip-path: inset(50% 0 20% 0); transform: translate(2px, -2px); }
+            60% { clip-path: inset(10% 0 60% 0); transform: translate(-2px, 0); }
+            80% { clip-path: inset(80% 0 5% 0); transform: translate(2px, 2px); }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -2px); }
+            40% { clip-path: inset(30% 0 40% 0); transform: translate(-2px, 2px); }
+            60% { clip-path: inset(10% 0 80% 0); transform: translate(2px, 0); }
+            80% { clip-path: inset(40% 0 30% 0); transform: translate(-2px, -2px); }
+        }
+        
+        /* Vinyl spin animation */
+        .vinyl-spin {
+            animation: spin 3s linear infinite;
+            animation-play-state: paused;
+        }
+        
+        .vinyl-spin.playing {
+            animation-play-state: running;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #dc2626;
+            border-radius: 4px;
+        }
+        
+        /* Hover effects */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+        }
+        
+        /* Gradient backgrounds */
+        .sorrow-gradient {
+            background: linear-gradient(180deg, #0a0a0a 0%, #1c1917 50%, #450a0a 100%);
+        }
+        
+        .hero-gradient {
+            background: radial-gradient(ellipse at center, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+        }
+        
+        /* Audio visualizer bars */
+        .bar {
+            width: 3px;
+            background: #dc2626;
+            animation: equalizer 1s ease-in-out infinite;
+        }
+        
+        @keyframes equalizer {
+            0%, 100% { height: 20%; }
+            50% { height: 100%; }
+        }
+        
+        .bar:nth-child(1) { animation-delay: 0s; }
+        .bar:nth-child(2) { animation-delay: 0.1s; }
+        .bar:nth-child(3) { animation-delay: 0.2s; }
+        .bar:nth-child(4) { animation-delay: 0.3s; }
+        .bar:nth-child(5) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="sorrow-gradient min-h-screen">
+    <div class="grain"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-40 px-6 py-4 bg-black/80 backdrop-blur-md border-b border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="font-display text-xl tracking-widest uppercase hover:text-red-500 transition-colors">
+                Richie_Rich<span class="text-red-600">007</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-8 text-sm tracking-wider font-medium">
+                <a href="#music" class="hover:text-red-500 transition-colors">Music</a>
+                <a href="#about" class="hover:text-red-500 transition-colors">About</a>
+                <a href="#videos" class="hover:text-red-500 transition-colors">Videos</a>
+                <a href="#connect" class="hover:text-red-500 transition-colors">Connect</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button onclick="toggleMenu()" class="md:hidden text-white p-2" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 md:hidden">
+        <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl font-display">
+            <button onclick="toggleMenu()" class="absolute top-6 right-6 text-white">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <a href="#music" onclick="toggleMenu()" class="hover:text-red-500 transition-colors">Music</a>
+            <a href="#about" onclick="toggleMenu()" class="hover:text-red-500 transition-colors">About</a>
+            <a href="#videos" onclick="toggleMenu()" class="hover:text-red-500 transition-colors">Videos</a>
+            <a href="#connect" onclick="toggleMenu()" class="hover:text-red-500 transition-colors">Connect</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center px-6 pt-20 hero-gradient">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-red-900/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-purple-900/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto text-center">
+            <p class="text-red-500 tracking-[0.4em] text-sm mb-6 uppercase animate-pulse font-bold">New Album Out Now</p>
+            
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-none">
+                <span class="glitch-text block" data-text="2 DECADES">2 DECADES</span>
+                <span class="glitch-text block text-red-600" data-text="OF SORROW">OF SORROW</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-400 mb-4 max-w-2xl mx-auto font-light italic">
+                "Raw emo punk rock from the heart of Southern California"
+            </p>
+            
+            <p class="text-sm text-gray-500 mb-12 tracking-wider">16 TRACKS • RELEASED FEBRUARY 19, 2026</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a href="https://open.spotify.com/album/3Pd3uismHChGjmjGFvvHIh" target="_blank" 
+                   class="px-8 py-4 bg-[#1DB954] hover:bg-[#1ed760] text-black font-bold tracking-wider transition-all hover:scale-105 flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                    LISTEN ON SPOTIFY
+                </a>
+                <a href="https://music.apple.com/us/album/2-decades-of-sorrow/1782483389" target="_blank"
+                   class="px-8 py-4 bg-[#FA243C] hover:bg-[#ff4d6d] text-white font-bold tracking-wider transition-all hover:scale-105 flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026-.747.043-1.49.123-2.205.335-.95.28-1.79.72-2.515 1.414C.39 2.54-.017 3.52 0 4.59c.002.123.006.247.013.37.01.13.023.26.04.39.047.37.13.733.24 1.087.18.574.456 1.103.81 1.574.45.596 1.01 1.086 1.64 1.44.63.356 1.314.58 2.022.67.36.05.727.06 1.09.03.08-.01.16-.01.24-.02h14.8c.04.01.08.01.12.02.363.03.73.02 1.09-.03.708-.09 1.392-.314 2.022-.67.63-.354 1.19-.844 1.64-1.44.354-.47.63-1 .81-1.574.11-.354.193-.717.24-1.087.017-.13.03-.26.04-.39.007-.123.01-.247.013-.37.017-1.07-.39-2.05-1.136-2.79-.725-.694-1.565-1.134-2.515-1.414-.715-.212-1.458-.292-2.205-.335-.152-.01-.303-.017-.455-.026h-.02zM12 18.172c-1.678 0-3.05-1.37-3.05-3.05 0-1.68 1.37-3.05 3.05-3.05 1.68 0 3.05 1.37 3.05 3.05 0 1.68-1.37 3.05-3.05 3.05zm0-13.344c-3.04 0-5.514 2.473-5.514 5.514 0 3.04 2.473 5.514 5.514 5.514 3.04 0 5.514-2.473 5.514-5.514 0-3.04-2.473-5.514-5.514-5.514z"/></svg>
+                    APPLE MUSIC
+                </a>
+            </div>
+            
+            <!-- Streaming Platforms Row -->
+            <div class="flex justify-center gap-6 opacity-60">
+                <a href="https://music.amazon.com/albums/B0GPJ5CT8J" target="_blank" class="hover:opacity-100 transition-opacity">
+                    <span class="text-xs tracking-wider">Amazon</span>
+                </a>
+                <span class="text-gray-600">•</span>
+                <a href="https://www.deezer.com/album/672326961" target="_blank" class="hover:opacity-100 transition-opacity">
+                    <span class="text-xs tracking-wider">Deezer</span>
+                </a>
+                <span class="text-gray-600">•</span>
+                <a href="https://tidal.com/browse/album/408353617" target="_blank" class="hover:opacity-100 transition-opacity">
+                    <span class="text-xs tracking-wider">Tidal</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Music/Album Section -->
+    <section id="music" class="py-24 px-6 relative bg-black/40">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                
+                <!-- Album Art & Player -->
+                <div class="sticky top-24">
+                    <div class="relative group cursor-pointer" onclick="togglePlay()">
+                        <div class="absolute inset-0 bg-red-600/30 blur-3xl group-hover:bg-red-600/40 transition-all duration-500"></div>
+                        
+                        <!-- Vinyl Record -->
+                        <div class="relative aspect-square bg-gradient-to-br from-gray-900 via-red-950 to-black rounded-lg overflow-hidden shadow-2xl border border-white/10">
+                            <div id="vinyl" class="vinyl-spin absolute inset-8 rounded-full bg-gradient-to-br from-gray-800 to-black border-4 border-gray-900 flex items-center justify-center shadow-inner">
+                                <div class="w-1/3 h-1/3 bg-gradient-to-br from-red-600 to-red-900 rounded-full flex items-center justify-center border-2 border-red-400">
+                                    <div class="w-3 h-3 bg-black rounded-full"></div>
+                                </div>
+                                <!-- Grooves -->
+                                <div class="absolute inset-0 rounded-full border border-gray-700/30"></div>
+                                <div class="absolute inset-3 rounded-full border border-gray-700/20"></div>
+                                <div class="absolute inset-6 rounded-full border border-gray-700/10"></div>
+                            </div>
+                            
+                            <!-- Album Art Overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
+                                <div class="text-center">
+                                    <div class="text-6xl mb-2">💔</div>
+                                    <div class="font-display text-xs tracking-widest text-red-500">2 DECADES</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Play Button Overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                                    <svg id="hero-play-icon" class="w-8 h-8 ml-1 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Now Playing Indicator -->
+                        <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-black/80 backdrop-blur px-6 py-2 rounded-full border border-white/10 flex items-center gap-3">
+                            <div class="flex gap-1 h-4 items-end" id="equalizer" style="display: none;">
+                                <div class="bar w-1 bg-red-500 h-full"></div>
+                                <div class="bar w-1 bg-red-500 h-full"></div>
+                                <div class="bar w-1 bg-red-500 h-full"></div>
+                                <div class="bar w-1 bg-red-500 h-full"></div>
+                                <div class="bar w-1 bg-red-500 h-full"></div>
+                            </div>
+                            <span id="play-status" class="text-xs tracking-wider font-bold">CLICK TO PLAY</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Mini Player Controls -->
+                    <div class="mt-8 bg-white/5 backdrop-blur rounded-lg p-6 border border-white/10">
+                        <div class="flex items-center justify-between mb-4">
+                            <span id="current-track-display" class="font-bold text-sm truncate">Select a track</span>
+                            <span id="time-display" class="text-xs text-gray-500 font-mono">0:00 / 0:00</span>
+                        </div>
+                        <div class="w-full h-1 bg-gray-700 rounded-full mb-4 cursor-pointer relative" onclick="seekTrack(event)">
+                            <div id="progress-bar" class="absolute left-0 top-0 h-full bg-red-600 rounded-full w-0 transition-all duration-100"></div>
+                        </div>
+                        <div class="flex justify-center items-center gap-6">
+                            <button onclick="previousTrack()" class="text-gray-400 hover:text-white transition-colors p-2">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M8.445 14.832A1 1 0 0010 14v-2.798l5.445 3.63A1 1 0 0017 14V6a1 1 0 00-1.555-.832L10 8.798V6a1 1 0 00-1.555-.832l-6 4a1 1 0 000 1.664l6 4z"></path></svg>
+                            </button>
+                            <button onclick="togglePlay()" class="w-14 h-14 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center transition-transform hover:scale-110 shadow-lg">
+                                <svg id="main-play-icon" class="w-6 h-6 ml-1 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                            <button onclick="nextTrack()" class="text-gray-400 hover:text-white transition-colors p-2">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M4.555 5.168A1 1 0 003 6v8a1 1 0 001.555.832L10 11.202V14a1 1 0 001.555.832l6-4a1 1 0 000-1.664l-6-4A1 1 0 0010 6v2.798l-5.445-3.63z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tracklist -->
+                <div>
+                    <h2 class="font-display text-4xl md:text-5xl mb-2">2 Decades of Sorrow</h2>
+                    <p class="text-gray-500 mb-8 text-sm tracking-wider">RICHIE_RICH007 • 2026 • 16 TRACKS • 54 MIN</p>
+                    
+                    <div class="space-y-1" id="tracklist">
+                        <!-- Tracks injected by JS -->
+                    </div>
+                    
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            Written, performed, and produced by Richie_Rich007. 
+                            Recorded in Southern California. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 bg-gradient-to-b from-black/50 to-transparent">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-display text-4xl md:text-5xl mb-8">About</h2>
+            <div class="prose prose-invert mx-auto text-gray-300 leading-relaxed">
+                <p class="text-lg mb-6">
+                    Richie_Rich007 is an emo punk rock artist and songwriter based in Southern California. 
+                    Blending raw emotional lyricism with high-energy punk instrumentation, the project 
+                    captures the essence of two decades of lived experience—heartbreak, resilience, 
+                    and the relentless pursuit of authentic expression.
+                </p>
+                <p class="text-lg mb-6">
+                    "2 Decades of Sorrow" marks the debut full-length release, featuring 16 tracks that 
+                    traverse themes of lost love, personal struggle, and eventual redemption. From the 
+                    confessional opener "A Girl I Never Knew" to the haunting closer "Final Exit," the 
+                    album is a journey through the shadows and back into the light.
+                </p>
+                <p class="text-lg">
+                    For fans of Brand New, Taking Back Sunday, and the mid-2000s emo revival—reimagined 
+                    for a new generation.
+                </p>
+            </div>
+            
+            <div class="mt-12 flex justify-center gap-8 text-sm">
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-red-500 mb-1">16</div>
+                    <div class="text-gray-500">Tracks</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-red-500 mb-1">54</div>
+                    <div class="text-gray-500">Minutes</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-red-500 mb-1">2026</div>
+                    <div class="text-gray-500">Release</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="py-24 px-6 bg-black/40">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-display text-4xl md:text-5xl mb-12 text-center">Videos</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- YouTube Embed Placeholder -->
+                <div class="aspect-video bg-gray-900 rounded-lg overflow-hidden border border-white/10 relative group hover-lift">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform cursor-pointer">
+                                <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-400">Music Video Coming Soon</p>
+                            <p class="text-xs text-gray-600 mt-2">Subscribe on YouTube for updates</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- TikTok/Shorts Placeholder -->
+                <div class="aspect-video bg-gray-900 rounded-lg overflow-hidden border border-white/10 relative group hover-lift">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">📱</div>
+                            <p class="text-sm text-gray-400">Behind the Scenes</p>
+                            <p class="text-xs text-gray-600 mt-2">Follow @richardc_007 on TikTok</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <a href="https://www.youtube.com/@richardcantosjr" target="_blank" 
+                   class="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg transition-all text-sm">
+                    <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    Subscribe on YouTube
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect/Social Section -->
+    <section id="connect" class="py-24 px-6 bg-gradient-to-t from-red-950/30 to-transparent">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-display text-4xl md:text-5xl mb-6">Connect</h2>
+            <p class="text-gray-400 mb-12">Follow for updates, new music, and behind-the-scenes content</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <!-- Instagram -->
+                <a href="https://instagram.com/richardc_007" target="_blank" 
+                   class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px]">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <div class="text-left">
+                        <div class="font-bold text-sm">Instagram</div>
+                        <div class="text-xs text-gray-400 group-hover:text-white">@richardc_007</div>
+                    </div>
+                </a>
+                
+                <!-- X/Twitter -->
+                <a href="https://x.com/RichardCantosJr" target="_blank" 
+                   class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-black border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px]">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    <div class="text-left">
+                        <div class="font-bold text-sm">X / Twitter</div>
+                        <div class="text-xs text-gray-400 group-hover:text-white">@RichardCantosJr</div>
+                    </div>
+                </a>
+                
+                <!-- TikTok -->
+                <a href="https://tiktok.com/@richardc_007" target="_blank" 
+                   class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-black border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px]">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                    <div class="text-left">
+                        <div class="font-bold text-sm">TikTok</div>
+                        <div class="text-xs text-gray-400 group-hover:text-white">@richardc_007</div>
+                    </div>
+                </a>
+                
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@richardcantosjr" target="_blank" 
+                   class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-red-600 border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px]">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <div class="text-left">
+                        <div class="font-bold text-sm">YouTube</div>
+                        <div class="text-xs text-gray-400 group-hover:text-white">@richardcantosjr</div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Newsletter -->
+            <div class="bg-white/5 backdrop-blur rounded-lg p-8 border border-white/10 max-w-md mx-auto">
+                <h3 class="font-bold text-lg mb-2">Join the Mailing List</h3>
+                <p class="text-sm text-gray-400 mb-4">Get exclusive updates and early access to new music</p>
+                <form onsubmit="handleSubscribe(event)" class="flex gap-2">
+                    <input type="email" placeholder="your@email.com" required 
+                           class="flex-1 px-4 py-2 bg-black/50 border border-white/20 rounded-lg focus:outline-none focus:border-red-600 text-sm">
+                    <button type="submit" class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg font-bold text-sm transition-colors">
+                        JOIN
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/10 bg-black/80">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-display text-2xl tracking-widest">
+                Richie_Rich<span class="text-red-600">007</span>
+            </div>
+            
+            <div class="flex gap-6 text-sm text-gray-500">
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms</a>
+                <a href="mailto:contact@richierich007.com" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            
+            <p class="text-gray-600 text-xs">© 2026 Richie_Rich007. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Album Data - 16 tracks based on research
+        const tracks = [
+            { title: "A Girl I Never Knew", duration: 184, explicit: false },
+            { title: "Forever I'll Love You", duration: 226, explicit: true },
+            { title: "The Wish", duration: 198, explicit: false },
+            { title: "They Say That the Moon", duration: 245, explicit: false },
+            { title: "I Got This Girl I Know", duration: 201, explicit: true },
+            { title: "I Just Got Bad News Today", duration: 267, explicit: true },
+            { title: "Static Memories", duration: 234, explicit: false },
+            { title: "Broken Transmission", duration: 189, explicit: true },
+            { title: "Ghost Frequency", duration: 312, explicit: false },
+            { title: "Rust & Bone", duration: 278, explicit: true },
+            { title: "Digital Suicide", duration: 245, explicit: true },
+            { title: "Neon Coffin", duration: 198, explicit: false },
+            { title: "Wired Wrong", duration: 267, explicit: true },
+            { title: "Last Broadcast", duration: 289, explicit: false },
+            { title: "Fade to Black", duration: 234, explicit: true },
+            { title: "Final Exit", duration: 201, explicit: true }
+        ];
+
+        let currentTrack = 0;
+        let isPlaying = false;
+        let progress = 0;
+        let progressInterval;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTracklist();
+            
+            // Smooth scroll for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+
+        function renderTracklist() {
+            const container = document.getElementById('tracklist');
+            container.innerHTML = tracks.map((track, index) => `
+                <div onclick="selectTrack(${index})" 
+                     class="group flex items-center justify-between p-4 rounded-lg cursor-pointer transition-all ${index === currentTrack ? 'bg-white/10 border-l-4 border-red-600' : 'hover:bg-white/5 border-l-4 border-transparent'}">
+                    <div class="flex items-center gap-4 flex-1 min-w-0">
+                        <span class="text-gray-500 w-6 text-sm font-mono flex-shrink-0">${String(index + 1).padStart(2, '0')}</span>
+                        <div class="min-w-0 flex-1">
+                            <h4 class="font-bold text-sm ${index === currentTrack ? 'text-white' : 'text-gray-300 group-hover:text-white'} truncate">${track.title}</h4>
+                            ${track.explicit ? '<span class="text-[10px] text-gray-500 border border-gray-600 px-1 rounded mt-1 inline-block">E</span>' : ''}
+                        </div>
+                    </div>
+                    <span class="text-sm text-gray-500 font-mono flex-shrink-0">${formatTime(track.duration)}</span>
+                </div>
+            `).join('');
+        }
+
+        function selectTrack(index) {
+            currentTrack = index;
+            progress = 0;
+            renderTracklist();
+            updatePlayerDisplay();
+            if (isPlaying) {
+                startProgress();
+            }
+        }
+
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            const vinyl = document.getElementById('vinyl');
+            const playIcon = document.getElementById('main-play-icon');
+            const heroPlayIcon = document.getElementById('hero-play-icon');
+            const status = document.getElementById('play-status');
+            const equalizer = document.getElementById('equalizer');
+            
+            if (isPlaying) {
+                vinyl.classList.add('playing');
+                playIcon.innerHTML = '<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>';
+                if (heroPlayIcon) heroPlayIcon.innerHTML = '<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>';
+                status.textContent = 'NOW PLAYING';
+                equalizer.style.display = 'flex';
+                startProgress();
+            } else {
+                vinyl.classList.remove('playing');
+                playIcon.innerHTML = '<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>';
+                if (heroPlayIcon) heroPlayIcon.innerHTML = '<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>';
+                status.textContent = 'PAUSED';
+                equalizer.style.display = 'none';
+                clearInterval(progressInterval);
+            }
+            updatePlayerDisplay();
+        }
+
+        function startProgress() {
+            clearInterval(progressInterval);
+            progressInterval = setInterval(() => {
+                progress += 0.5;
+                if (progress >= 100) {
+                    nextTrack();
+                }
+                updateProgressBar();
+            }, 100);
+        }
+
+        function updateProgressBar() {
+            document.getElementById('progress-bar').style.width = progress + '%';
+            const current = Math.floor((progress / 100) * tracks[currentTrack].duration);
+            document.getElementById('time-display').textContent = 
+                `${formatTime(current)} / ${formatTime(tracks[currentTrack].duration)}`;
+        }
+
+        function updatePlayerDisplay() {
+            document.getElementById('current-track-display').textContent = tracks[currentTrack].title;
+        }
+
+        function nextTrack() {
+            currentTrack = (currentTrack + 1) % tracks.length;
+            progress = 0;
+            renderTracklist();
+            updatePlayerDisplay();
+            if (isPlaying) startProgress();
+        }
+
+        function previousTrack() {
+            currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+            progress = 0;
+            renderTracklist();
+            updatePlayerDisplay();
+            if (isPlaying) startProgress();
+        }
+
+        function seekTrack(e) {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            progress = (x / rect.width) * 100;
+            updateProgressBar();
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins}:${String(secs).padStart(2, '0')}`;
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('translate-x-full')) {
+                menu.classList.remove('translate-x-full');
+            } else {
+                menu.classList.add('translate-x-full');
+            }
+        }
+
+        function handleSubscribe(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.textContent;
+            btn.textContent = 'SUBSCRIBED!';
+            btn.classList.add('bg-green-600');
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.classList.remove('bg-green-600');
+                e.target.reset();
+            }, 2000);
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-black/95');
+                nav.classList.remove('bg-black/50');
+            } else {
+                nav.classList.remove('bg-black/95');
+                nav.classList.add('bg-black/50');
+            }
+        });
+    </script>
+</body>
+</html>
