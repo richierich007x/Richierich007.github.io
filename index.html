@@ -62,8 +62,8 @@
             z-index: -2;
         }
         @keyframes glow { 0% { text-shadow: 0 0 20px #f87171; } 100% { text-shadow: 0 0 40px #c084fc; } }
-        @keyframes glitch1 { 0%,100% { clip-path: inset(0); transform: translate(0); } 20% { clip-path: inset(20% 0 30% 0); transform: translate(-5px,5px); } /* ... shortened for brevity */ }
-        @keyframes glitch2 { /* similar */ }
+        @keyframes glitch1 { 0%,100% { clip-path: inset(0); transform: translate(0); } 20% { clip-path: inset(20% 0 30% 0); transform: translate(-5px,5px); } 40% { clip-path: inset(55% 0 25% 0); transform: translate(5px,-5px); } 60% { clip-path: inset(15% 0 65% 0); transform: translate(-5px,0); } 80% { clip-path: inset(85% 0 10% 0); transform: translate(5px,5px); } }
+        @keyframes glitch2 { 0%,100% { clip-path: inset(0); transform: translate(0); } 20% { clip-path: inset(65% 0 15% 0); transform: translate(5px,-5px); } 40% { clip-path: inset(35% 0 45% 0); transform: translate(-5px,5px); } 60% { clip-path: inset(15% 0 85% 0); transform: translate(5px,0); } 80% { clip-path: inset(45% 0 35% 0); transform: translate(-5px,-5px); } }
         .hero-bg {
             position: absolute;
             inset: 0;
@@ -134,23 +134,24 @@
                 <div>
                     <h3 class="text-3xl font-bold mb-6 text-red-400">Tracklist</h3>
                     <ol class="list-decimal pl-6 space-y-3 text-lg">
-                        <li>A Girl I Never Knew</li>
-                        <li>Forever I’ll Love You</li>
-                        <li>I Got This Girl I Know</li>
-                        <li>I Wake Up Everyday</li>
-                        <li>Broken Promises</li>
-                        <li>Shadows in the Desert</li>
-                        <li>Heart on Fire</li>
-                        <li>Lost in the Waves</li>
-                        <li>No More Lies</li>
-                        <li>Echoes of Yesterday</li>
-                        <li>Rebel Heart</li>
-                        <li>Fading Lights</li>
-                        <li>Pain in the Rain</li>
-                        <li>Last Goodbye</li>
-                        <li>Rise Again</li>
-                        <li>2 Decades of Sorrow (Outro)</li>
+                        <li>A girl i never knew <span class="text-gray-500 text-sm">(4:51)</span></li>
+                        <li>Forver i'll love you <span class="text-gray-500 text-sm">(4:04)</span></li>
+                        <li>I got this girl i know <span class="text-gray-500 text-sm">(3:07)</span></li>
+                        <li>I just got bad news today <span class="text-gray-500 text-sm">(4:38)</span></li>
+                        <li>I jist hioe in the quiet of the night <span class="text-gray-500 text-sm">(5:20)</span></li>
+                        <li>I wake up everyday <span class="text-gray-500 text-sm">(2:33)</span></li>
+                        <li>I want a girl <span class="text-gray-500 text-sm">(3:14)</span></li>
+                        <li>I'm waiting here just for this moment <span class="text-gray-500 text-sm">(4:32)</span></li>
+                        <li>Just the other day <span class="text-gray-500 text-sm">(3:33)</span></li>
+                        <li>Just the other day we argued <span class="text-gray-500 text-sm">(6:37)</span></li>
+                        <li>My sorrow <span class="text-gray-500 text-sm">(5:10)</span></li>
+                        <li>No more late nights <span class="text-gray-500 text-sm">(2:40)</span></li>
+                        <li>Our old air <span class="text-gray-500 text-sm">(3:11)</span></li>
+                        <li>The stars are shining bright late tonight <span class="text-gray-500 text-sm">(4:32)</span></li>
+                        <li>The wish <span class="text-gray-500 text-sm">(3:02)</span></li>
+                        <li>They say that the moon <span class="text-gray-500 text-sm">(4:48)</span></li>
                     </ol>
+                    <p class="mt-8 text-gray-400 text-lg">16 tracks • 1 hour 5 min • Released February 19, 2026 via DistroKid</p>
                 </div>
                 <div class="space-y-10">
                     <div>
@@ -170,14 +171,26 @@
         </div>
     </section>
 
-    <!-- About -->
+    <!-- About – Your full bio restored exactly as provided -->
     <section id="about" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="font-display text-5xl mb-12 text-red-500">About Richie_Rich007</h2>
-            <div class="prose prose-invert prose-lg max-w-none">
-                <p>Richard Darwin Cantos Jr., performing as <strong>Richie_Rich007</strong>, is an emo punk rock artist from Oceanside, California. Self-taught and DIY to the core, he blends raw punk energy with melodic heartbreak, drawing from personal struggles, love, loss, and resilience over two decades.</p>
-                <p>His debut album <em>2 Decades of Sorrow</em> (2026, 16 tracks, 54+ min) channels real-life stories into anthems of sorrow and survival. Influences span punk revival, folk introspection, and ambient textures.</p>
-                <p>Available on all platforms. Catch him at local SoCal venues or follow for updates. This is music for the broken, the fighters, and the ones still standing.</p>
+            <div class="prose prose-invert prose-lg max-w-none text-left md:text-center">
+                <p class="mb-6">
+                    Richard Darwin Cantos Jr., performing under the stage name Richie_Rich007, is a dynamic artist, songwriter, and composer hailing from Oceanside, California. Emerging from the punk revival scene, Richard crafts music that channels raw emotion, personal introspection, and the highs and lows of life over the past twenty years. His lyrics often explore themes of love, heartbreak, resilience, and daily struggles, delivered with an authentic edge that resonates with listeners seeking genuine storytelling.
+                </p>
+                <p class="mb-6">
+                    Self-taught and self-produced, Richard began his musical journey in his teens, blending punk energy with melodic elements to create a sound that’s both haunting and invigorating. Influences from rock, folk, and ambient genres shine through in his compositions, featuring layered instrumentation, evocative vocals, and a DIY ethos that defines his independent spirit.
+                </p>
+                <p class="mb-6">
+                    In 2026, Richard released his debut album, 2 Decades of Sorrow, a 16-track opus clocking in at over an hour, distributed via DistroKid and 11777215 Records DK. Released on February 19, the album includes standout tracks like “A Girl I Never Knew,” “Forever I’ll Love You,” “I Got This Girl I Know,” and “I Wake Up Everyday,” showcasing his talent for turning personal experiences into relatable anthems.
+                </p>
+                <p class="mb-6">
+                    It’s now available on major platforms like Pandora, with promotional content highlighting its punk revival vibes. As Richie_Rich007, Richard connects with fans through social media, sharing snippets, full videos, and updates on Instagram (@richie_rich007_). With performances at local Southern California venues and collaborations on the horizon, he continues to build his presence in the indie music world, aiming to inspire through unfiltered expression and emotional depth.
+                </p>
+                <p>
+                    For more, check out his artist pages or stream the album today.
+                </p>
             </div>
         </div>
     </section>
