@@ -130,37 +130,18 @@
         .hero-gradient {
             background: radial-gradient(ellipse at center, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
         }
-       
-        /* Audio visualizer bars */
-        .bar {
-            width: 3px;
-            background: #dc2626;
-            animation: equalizer 1s ease-in-out infinite;
-        }
-       
-        @keyframes equalizer {
-            0%, 100% { height: 20%; }
-            50% { height: 100%; }
-        }
-       
-        .bar:nth-child(1) { animation-delay: 0s; }
-        .bar:nth-child(2) { animation-delay: 0.1s; }
-        .bar:nth-child(3) { animation-delay: 0.2s; }
-        .bar:nth-child(4) { animation-delay: 0.3s; }
-        .bar:nth-child(5) { animation-delay: 0.4s; }
     </style>
 </head>
 <body class="sorrow-gradient min-h-screen">
     <div class="grain"></div>
    
-    <!-- Navigation -->
+    <!-- Navigation (unchanged) -->
     <nav class="fixed top-0 w-full z-40 px-6 py-4 bg-black/80 backdrop-blur-md border-b border-white/10 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="#" class="font-display text-xl tracking-widest uppercase hover:text-red-500 transition-colors">
                 Richie_Rich<span class="text-red-600">007</span>
             </a>
            
-            <!-- Desktop Menu -->
             <div class="hidden md:flex gap-8 text-sm tracking-wider font-medium">
                 <a href="#music" class="hover:text-red-500 transition-colors">Music</a>
                 <a href="#about" class="hover:text-red-500 transition-colors">About</a>
@@ -168,7 +149,6 @@
                 <a href="#connect" class="hover:text-red-500 transition-colors">Connect</a>
             </div>
            
-            <!-- Mobile Menu Button -->
             <button onclick="toggleMenu()" class="md:hidden text-white p-2" aria-label="Toggle menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -176,7 +156,8 @@
             </button>
         </div>
     </nav>
-    <!-- Mobile Menu -->
+
+    <!-- Mobile Menu (unchanged) -->
     <div id="mobile-menu" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 md:hidden">
         <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl font-display">
             <button onclick="toggleMenu()" class="absolute top-6 right-6 text-white">
@@ -190,7 +171,8 @@
             <a href="#connect" onclick="toggleMenu()" class="hover:text-red-500 transition-colors">Connect</a>
         </div>
     </div>
-    <!-- Hero Section -->
+
+    <!-- Hero Section (minor tweak: OUT NOW) -->
     <section class="relative min-h-screen flex items-center justify-center px-6 pt-20 hero-gradient">
         <div class="absolute inset-0 overflow-hidden">
             <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-red-900/20 rounded-full blur-3xl animate-pulse"></div>
@@ -224,7 +206,6 @@
                 </a>
             </div>
            
-            <!-- Streaming Platforms Row -->
             <div class="flex justify-center gap-6 opacity-60">
                 <a href="https://music.amazon.com/albums/B0GPJ5CT8J" target="_blank" class="hover:opacity-100 transition-opacity">
                     <span class="text-xs tracking-wider">Amazon</span>
@@ -243,20 +224,17 @@
         </div>
     </section>
 
-    <!-- Music/Album Section - Now with REAL Spotify Embed Player -->
+    <!-- Music Section with Spotify Embed (unchanged from last) -->
     <section id="music" class="py-24 px-6 relative bg-black/40">
         <div class="max-w-6xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-start">
                
-                <!-- Album Art & Real Player -->
                 <div class="sticky top-24">
                     <div class="relative group">
                         <div class="absolute inset-0 bg-red-600/30 blur-3xl group-hover:bg-red-600/40 transition-all duration-500"></div>
                        
-                        <!-- Vinyl Record Visual (still spins on hover or play, but now decorative) -->
                         <div class="relative aspect-square bg-gradient-to-br from-gray-900 via-red-950 to-black rounded-lg overflow-hidden shadow-2xl border border-white/10">
                             <div class="absolute inset-8 rounded-full bg-gradient-to-br from-gray-800 to-black border-4 border-gray-900 flex items-center justify-center shadow-inner" style="background-image: url('https://i.ytimg.com/vi/Mh9P0Efevck/maxresdefault.jpg'); background-size: cover; background-position: center;">
-                                <!-- Grooves -->
                                 <div class="absolute inset-0 rounded-full border border-gray-700/30"></div>
                                 <div class="absolute inset-3 rounded-full border border-gray-700/20"></div>
                                 <div class="absolute inset-6 rounded-full border border-gray-700/10"></div>
@@ -264,7 +242,6 @@
                         </div>
                     </div>
 
-                    <!-- Spotify Embed Player - This is where real audio comes from -->
                     <div class="mt-8 bg-white/5 backdrop-blur rounded-lg p-6 border border-white/10">
                         <h3 class="font-bold text-lg mb-4 text-center">Listen to 2 Decades of Sorrow</h3>
                         <iframe style="border-radius:12px" 
@@ -280,21 +257,12 @@
                     </div>
                 </div>
 
-                <!-- Tracklist (kept for reference, now links to Spotify) -->
                 <div>
                     <h2 class="font-display text-4xl md:text-5xl mb-2">2 Decades of Sorrow</h2>
-                    <p class="text-gray-500 mb-8 text-sm tracking-wider">RICHIE_RICH007 • 2026 • 16 TRACKS • 54 MIN</p>
+                    <p class="text-gray-500 mb-8 text-sm tracking-wider">RICHIE_RICH007 • 2026 • 16 TRACKS • 54+ MIN</p>
                    
                     <div class="space-y-1">
-                        <div class="group flex items-center justify-between p-4 rounded-lg hover:bg-white/5 transition-all">
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-500 w-6 text-sm font-mono">01</span>
-                                <h4 class="font-bold text-sm">A Girl I Never Knew</h4>
-                            </div>
-                            <span class="text-sm text-gray-500 font-mono">3:04</span>
-                        </div>
-                        <!-- Repeat for other tracks if you want the full list; abbreviated here for space -->
-                        <p class="text-xs text-gray-500 mt-4">Full tracklist available on Spotify above. Click play to hear previews or full tracks!</p>
+                        <p class="text-sm text-gray-300">Full tracklist and streaming available via the Spotify player above. Highlights include “A Girl I Never Knew,” “Forever I’ll Love You,” “I Got This Girl I Know,” and more.</p>
                     </div>
                    
                     <div class="mt-8 pt-8 border-t border-white/10">
@@ -308,36 +276,35 @@
         </div>
     </section>
 
-    <!-- About Section (unchanged) -->
+    <!-- About Section - NOW WITH YOUR FULL BIO -->
     <section id="about" class="py-24 px-6 bg-gradient-to-b from-black/50 to-transparent">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="font-display text-4xl md:text-5xl mb-8">About</h2>
-            <div class="prose prose-invert mx-auto text-gray-300 leading-relaxed">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-display text-4xl md:text-5xl mb-8 text-center">About</h2>
+            <div class="prose prose-invert mx-auto text-gray-300 leading-relaxed text-left md:text-center max-w-prose">
                 <p class="text-lg mb-6">
-                    Richie_Rich007 is an emo punk rock artist and songwriter based in Southern California.
-                    Blending raw emotional lyricism with high-energy punk instrumentation, the project
-                    captures the essence of two decades of lived experience—heartbreak, resilience,
-                    and the relentless pursuit of authentic expression.
+                    Richard Darwin Cantos Jr., performing under the stage name <strong>Richie_Rich007</strong>, is a dynamic artist, songwriter, and composer hailing from Oceanside, California. Emerging from the punk revival scene, Richard crafts music that channels raw emotion, personal introspection, and the highs and lows of life over the past twenty years. His lyrics often explore themes of love, heartbreak, resilience, and daily struggles, delivered with an authentic edge that resonates with listeners seeking genuine storytelling.
                 </p>
                 <p class="text-lg mb-6">
-                    "2 Decades of Sorrow" marks the debut full-length release, featuring 16 tracks that
-                    traverse themes of lost love, personal struggle, and eventual redemption. From the
-                    confessional opener "A Girl I Never Knew" to the haunting closer "Final Exit," the
-                    album is a journey through the shadows and back into the light.
+                    Self-taught and self-produced, Richard began his musical journey in his teens, blending punk energy with melodic elements to create a sound that’s both haunting and invigorating. Influences from rock, folk, and ambient genres shine through in his compositions, featuring layered instrumentation, evocative vocals, and a DIY ethos that defines his independent spirit.
+                </p>
+                <p class="text-lg mb-6">
+                    In 2026, Richard released his debut album, <em>2 Decades of Sorrow</em>, a 16-track opus clocking in at over an hour, distributed via DistroKid and 11777215 Records DK. Released on February 19, the album includes standout tracks like “A Girl I Never Knew,” “Forever I’ll Love You,” “I Got This Girl I Know,” and “I Wake Up Everyday,” showcasing his talent for turning personal experiences into relatable anthems.
+                </p>
+                <p class="text-lg mb-6">
+                    It’s now available on major platforms like Pandora, with promotional content highlighting its punk revival vibes. As Richie_Rich007, Richard connects with fans through social media, sharing snippets, full videos, and updates on Instagram (@richie_rich007_). With performances at local Southern California venues and collaborations on the horizon, he continues to build his presence in the indie music world, aiming to inspire through unfiltered expression and emotional depth.
                 </p>
                 <p class="text-lg">
-                    For fans of Brand New, Taking Back Sunday, and the mid-2000s emo revival—reimagined
-                    for a new generation.
+                    For more, check out his artist pages or stream the album today.
                 </p>
             </div>
            
-            <div class="mt-12 flex justify-center gap-8 text-sm">
+            <div class="mt-12 flex justify-center gap-8 text-sm flex-wrap">
                 <div class="text-center">
                     <div class="text-2xl font-bold text-red-500 mb-1">16</div>
                     <div class="text-gray-500">Tracks</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-2xl font-bold text-red-500 mb-1">54</div>
+                    <div class="text-2xl font-bold text-red-500 mb-1">54+</div>
                     <div class="text-gray-500">Minutes</div>
                 </div>
                 <div class="text-center">
@@ -389,14 +356,13 @@
         </div>
     </section>
 
-    <!-- Connect/Social Section - UPDATED LINKS -->
+    <!-- Connect Section (with correct links & email) -->
     <section id="connect" class="py-24 px-6 bg-gradient-to-t from-red-950/30 to-transparent">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="font-display text-4xl md:text-5xl mb-6">Connect</h2>
             <p class="text-gray-400 mb-12">Follow for updates, new music, and behind-the-scenes content</p>
            
             <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <!-- Instagram - UPDATED -->
                 <a href="https://www.instagram.com/richie_rich007_" target="_blank"
                    class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px]">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -406,7 +372,6 @@
                     </div>
                 </a>
                
-                <!-- X/Twitter (unchanged) -->
                 <a href="https://x.com/RichardCantosJr" target="_blank"
                    class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-black border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px]">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -416,7 +381,6 @@
                     </div>
                 </a>
                
-                <!-- TikTok - UPDATED -->
                 <a href="https://www.tiktok.com/@richie_rich007_" target="_blank"
                    class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-black border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px]">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
@@ -426,7 +390,6 @@
                     </div>
                 </a>
                
-                <!-- YouTube - UPDATED -->
                 <a href="https://youtube.com/@richie_rich007x" target="_blank"
                    class="group flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-red-600 border border-white/10 rounded-lg transition-all hover:scale-105 min-w-[200px]">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -437,20 +400,15 @@
                 </a>
             </div>
            
-            <!-- Newsletter (unchanged) -->
-            <div class="bg-white/5 backdrop-blur rounded-lg p-8 border border-white/10 max-w-md mx-auto">
+            <div class="bg-white/5 backdrop-blur rounded-lg p-8 border border-white/10 max-w-md mx-auto mt-8">
                 <h3 class="font-bold text-lg mb-2">Join the Mailing List</h3>
                 <p class="text-sm text-gray-400 mb-4">Get exclusive updates and early access to new music</p>
                 <form onsubmit="handleSubscribe(event)" class="flex gap-2">
-                    <input type="email" placeholder="your@email.com" required
-                           class="flex-1 px-4 py-2 bg-black/50 border border-white/20 rounded-lg focus:outline-none focus:border-red-600 text-sm">
-                    <button type="submit" class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg font-bold text-sm transition-colors">
-                        JOIN
-                    </button>
+                    <input type="email" placeholder="your@email.com" required class="flex-1 px-4 py-2 bg-black/50 border border-white/20 rounded-lg focus:outline-none focus:border-red-600 text-sm">
+                    <button type="submit" class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg font-bold text-sm transition-colors">JOIN</button>
                 </form>
             </div>
 
-            <!-- Direct Email (from previous suggestion) -->
             <div class="mt-8 text-center">
                 <p class="text-sm text-gray-400 mb-2">Or reach out directly:</p>
                 <a href="mailto:richie_rich007x@yahoo.com" 
@@ -464,7 +422,7 @@
         </div>
     </section>
 
-    <!-- Footer (with email updated) -->
+    <!-- Footer -->
     <footer class="py-12 px-6 border-t border-white/10 bg-black/80">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="font-display text-2xl tracking-widest">
@@ -500,7 +458,6 @@
             }, 2000);
         }
 
-        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
